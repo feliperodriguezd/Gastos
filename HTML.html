@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> Gastos </title>
+		<link rel="stylesheet" href="CSS.css">
+		<script src="JS.js"> </script>
+	</head>
+	<body>
+		<div id="div1">
+			<table id="tabla">
+				<thead>
+					<tr>
+						<th> Tipo </th>
+						<th> Descripcion </th>
+						<th> Monto </th>
+						<th> Categoria </th>
+					</tr>
+				</thead>
+				<tbody>
+				
+				</tbody>
+			</table>
+		</div>
+		<div id="div2">
+			<form id="formulario">
+				<label for="ingreso"> Ingreso </label>
+				<input type="radio" id="ingreso" name="egreso/ingreso" checked>
+				<label for="egreso"> Egreso </label>
+				<input type="radio" id="egreso" name="egreso/ingreso">
+				<br>
+				<br>
+				<label for="descripcion"> Descripcion </label>
+				<input type="text" id="descripcion" name="descripcion" class="Cuadro">
+				<br>
+				<br>
+				<label for="monto"> Monto </label>
+				<input type="number" id="monto" name="monto" class="Cuadro">
+				<label for="$"> $ </label>
+				<input type="radio" id="$" name="moneda" checked>
+				<label for="USD"> U$S </label>
+				<input type="radio" id="USD" name="moneda">
+				<br>
+				<br>
+				<label for="categoria"> Categoria </label>
+				<input type="text" id="categoria" name="categoria" class="Cuadro">
+				<br>
+				<br>
+				<input type="button" id="boton" name="boton" value="Agregar" class="Botones">
+				<br>
+				<br>
+				<input type="button" id="total" name="total" value="Calcular total" class="Botones">
+				<label for="$2"> $ </label>
+				<input type="radio" id="$2" name="moneda2" checked>
+				<label for="USD2"> U$S </label>
+				<input type="radio" id="USD2" name="moneda2">
+			</form>
+		</div>
+	</body>
+</html>

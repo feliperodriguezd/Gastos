@@ -1,0 +1,47 @@
+table, th, td{
+	border: 1px solid black;
+	text-align: center;
+	border-radius: 15px 15px 15px 15px;
+}
+
+label {font-size: 20px;}
+
+.Cuadro{font-size:15px;}
+
+.Botones{
+	color: darkblue;
+	width: 150px;
+	font-size: 20px;
+	
+}
+
+table{
+	width: 700px; 
+	height:100px;
+	background-color:#F0CF9C;	
+}
+
+tr{
+	background-color:#E8F09C;
+}
+
+td {
+	background-color: #D4F09C;
+}
+
+#div1{
+	float: left;
+	margin-left: 80px;
+	margin-top: 10px;
+}
+
+#div2{
+	float: right;
+	margin-right: 70px;
+	margin-top: 10px;
+	background-color: #fafafa;
+	border-radius: 15px 15px 15px 15px;
+	padding:10px;
+	
+}
+
