@@ -1,3 +1,6 @@
+html{background: url(Imagenes/Fondo.jpg);
+}
+
 table, th, td{
 	border: 1px solid black;
 	text-align: center;
@@ -12,17 +15,16 @@ label {font-size: 20px;}
 	color: darkblue;
 	width: 150px;
 	font-size: 20px;
-	
 }
 
 table{
 	width: 700px; 
 	height:100px;
-	background-color:#F0CF9C;	
+	background-color:#3C3C3C;
 }
 
-tr{
-	background-color:#E8F09C;
+th{
+	background-color:#A9A9A9;
 }
 
 td {
@@ -41,7 +43,6 @@ td {
 	margin-top: 10px;
 	background-color: #fafafa;
 	border-radius: 15px 15px 15px 15px;
-	padding:10px;
+	padding:20px;
 	
 }
-

@@ -39,6 +39,7 @@ function total (){
 	if (document.getElementById("$2").checked){
 		suma.innerHTML="$ "+sumatotal;
 	} else {
+		// Ir actualizando el valor del dolar
 		if ((sumatotal/43)-parseInt(sumatotal/43)>0.5){
 			suma.innerHTML="U$S "+(parseInt(sumatotal/43)+1)+ " (aprox.)";
 		} else{
@@ -62,6 +63,7 @@ function moneda(){
 }
 
 function monedaSuma (){
+	// Ir actualizando el valor del dolar
 	let respuesta;
 	if (document.getElementById("USD").checked){
 		respuesta = sumatotal=sumatotal+(parseInt(document.getElementById("monto").value)*43);
@@ -72,6 +74,7 @@ function monedaSuma (){
 }
 
 function monedaResta(){
+	// Ir actualizando el valor del dolar
 	let respuesta;
 	if (document.getElementById("USD").checked){
 		respuesta = sumatotal=sumatotal-(parseInt(document.getElementById("monto").value)*43);
