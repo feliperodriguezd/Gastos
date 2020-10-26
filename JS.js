@@ -26,7 +26,14 @@ function agregar(){
 		descripcion.innerHTML=document.getElementById("descripcion").value;
 		monto.innerHTML=moneda();
 		categoria.innerHTML=document.getElementById("categoria").value;
+		limpirar()
 	}
+}
+
+function limpirar(){
+	document.getElementById("descripcion").value="";
+	document.getElementById("monto").value="";
+	document.getElementById("categoria").value="";
 }
 
 function total (){
