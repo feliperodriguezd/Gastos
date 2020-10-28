@@ -9,7 +9,7 @@ table, th, td{
 
 label {font-size: 20px;}
 
-.Cuadro{font-size:15px;}
+.Cuadro{font-size:15px;}	
 
 .Botones{
 	color: darkblue;
@@ -37,12 +37,14 @@ td {
 	margin-top: 10px;
 }
 
-#div2{
+#div2, #div3{
 	float: right;
 	margin-right: 70px;
 	margin-top: 10px;
 	background-color: #fafafa;
 	border-radius: 15px 15px 15px 15px;
 	padding:20px;
-	
+	width: 351px;
 }
+
+#div3{clear: both;}
