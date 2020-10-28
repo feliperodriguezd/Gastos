@@ -10,9 +10,7 @@ function inicio(){
 
 function agregar(){
 	let tablaPantalla = document.getElementById("tabla");
-	if (document.getElementById("monto").value==""){
-		alert("Ingrese un monto");
-	} else {
+	if (comprobar()==true){
 		let fila=tablaPantalla.insertRow();
 		let tipo=fila.insertCell(0);
 		let descripcion=fila.insertCell(1);
@@ -27,11 +25,29 @@ function agregar(){
 		}
 		descripcion.innerHTML=document.getElementById("descripcion").value;
 		monto.innerHTML=moneda();
-		categoria.innerHTML=document.getElementById("categoria").value;
-		info.agregar(new todo(document.getElementById("descripcion").value, document.getElementById("monto").value, document.getElementById("categoria").value));
-		agregarCantidad();
+		if (document.getElementById("categoria1").value!="" && document.getElementById("categoria2").selectedIndex==""){
+			categoria.innerHTML=document.getElementById("categoria1").value;
+		} else{
+			categoria.innerHTML=document.getElementById("categoria2").value;
+		}
+		info.agregar(new todo(document.getElementById("descripcion").value, document.getElementById("monto").value, document.getElementById("categoria1").value));
+		agregarCantidad(document.getElementById("tipoCategoria"));
+		agregarCantidad(document.getElementById("categoria2"));
 		limpirar();
 	}
+}
+
+function comprobar(){
+	let respuesta=true;
+	if (document.getElementById("monto").value==""){
+		respuesta=false;
+		alert("Ingrese un monto");
+	}
+	if (document.getElementById("categoria1").value!="" && document.getElementById("categoria2").selectedIndex!=""){
+		respuesta=false;
+		alert("Las dos campos en categoria estan completos");
+	}
+	return respuesta
 }
 
 function calculocantidad(){
@@ -41,9 +57,9 @@ function calculocantidad(){
 	
 }
 
-function agregarCantidad (){
-	if (!info.comparar(document.getElementById("categoria").value)){
-		let combo = document.getElementById("tipoCategoria");
+
+function agregarCantidad (combo){
+	if (!info.comparar(combo.value)){
 		let datos = info.agregarCategoria();
 			let nodoC = document.createElement("option");
 			let nodoTextoC = document.createTextNode(datos[datos.length-1]);
@@ -55,7 +71,7 @@ function agregarCantidad (){
 function limpirar(){
 	document.getElementById("descripcion").value="";
 	document.getElementById("monto").value="";
-	document.getElementById("categoria").value="";
+	document.getElementById("categoria1").value="";
 }
 
 function total (){
