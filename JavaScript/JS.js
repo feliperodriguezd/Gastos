@@ -37,7 +37,7 @@ function agregar(){
 function calculocantidad(){
 	let seleccionado = document.getElementById("tipoCategoria").value;
 	let respuesta=document.getElementById("respuesta");
-	respuesta.innerHTML="La cantidad de veces que esta esta categoria es "+info.cantDatos(seleccionado);
+	respuesta.innerHTML="La cantidad de veces que esta categoria es "+info.cantDatos(seleccionado);
 	
 }
 
