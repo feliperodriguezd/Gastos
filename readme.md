@@ -7,3 +7,5 @@ Se agregó un fondo de pantalla y placeholders, se cambiaron los colores de la t
 Se agregó otro campo con una lista desplegable que calcula la cantidad de veces que una categoría aparece.
 #### Versión 0.0.4:
 Se agregó una lista desplegable al lado de categoría en la cual se agregan las categorías usadas para simplificar el proceso de agregar una categoría. 
+#### Versión 0.0.5:
+Se cambió la función de del botón que contaba categorías y ahora despliega los elementos de esa categoría.
