@@ -1,11 +1,12 @@
 window.addEventListener("load", inicio);
 var sumatotal=0;
+var catLista="";
 var info = new datos();
 
 function inicio(){
 	document.getElementById("boton").addEventListener("click", agregar);
 	document.getElementById("total").addEventListener("click", total);
-	document.getElementById("tipoCat").addEventListener("click", calculocantidad);
+	document.getElementById("tipoCat").addEventListener("click", desplegarCategoria);
 }
 
 function agregar(){
@@ -27,14 +28,26 @@ function agregar(){
 		monto.innerHTML=moneda();
 		if (document.getElementById("categoria1").value!="" && document.getElementById("categoria2").selectedIndex==""){
 			categoria.innerHTML=document.getElementById("categoria1").value;
+			catLista=document.getElementById("categoria1").value;
 		} else{
 			categoria.innerHTML=document.getElementById("categoria2").value;
+			catLista=document.getElementById("categoria2").value;
 		}
-		info.agregar(new todo(document.getElementById("descripcion").value, document.getElementById("monto").value, document.getElementById("categoria1").value));
+		info.agregar(new todo(document.getElementById("descripcion").value, document.getElementById("monto").value, catLista, tipoMoneda()));
 		agregarCantidad(document.getElementById("tipoCategoria"));
 		agregarCantidad(document.getElementById("categoria2"));
 		limpirar();
 	}
+}
+
+function tipoMoneda (){
+	let respuesta;
+	if (document.getElementById("USD").checked){
+		respuesta="U$S";
+	} else {
+		respuesta="$";
+	}
+	return respuesta;
 }
 
 function comprobar(){
@@ -50,16 +63,42 @@ function comprobar(){
 	return respuesta
 }
 
-function calculocantidad(){
-	let seleccionado = document.getElementById("tipoCategoria").value;
-	let respuesta=document.getElementById("respuesta");
-	respuesta.innerHTML="La cantidad de veces que esta categoria está es "+info.cantDatos(seleccionado);
-	
+function desplegarCategoria(){
+	let tabla=document.getElementById("tabla1");
+	tabla.innerHTML="";
+	let datos=info.agregarCategoria();
+	if(datos.length==0){
+		tabla.innerHTML="Sin datos"
+	} else {
+			let cabezal = tabla.createTHead();
+			let filaTit= cabezal.insertRow();
+			let celTit1 = filaTit.insertCell();
+			celTit1.innerHTML ="Tipo";
+			let celTit2 = filaTit.insertCell();
+			celTit2.innerHTML = "Descripcion";
+			let celTit3=filaTit.insertCell();
+			celTit3.innerHTML="Monto"
+			for (let elem of datos){
+				if (elem.categoria==document.getElementById("tipoCategoria").value){
+					let fila = tabla.insertRow();
+					let tipo = fila.insertCell();
+					let descripcion = fila.insertCell();
+					let monto = fila.insertCell();
+					if (document.getElementById("ingreso").checked){
+						tipo.innerHTML="Ingreso";
+						} else {
+							tipo.innerHTML="Egreso";
+					}
+					descripcion.innerHTML =elem.descripcion;
+					monto.innerHTML =elem.moneda + " "+ elem.monto;
+				}
+			}
+	}
 }
 
 
 function agregarCantidad (combo){
-	if (!info.comparar(combo.value)){
+	if (!info.comparar(catLista)){
 		let datos = info.agregarCategoria();
 			let nodoC = document.createElement("option");
 			let nodoTextoC = document.createTextNode(datos[datos.length-1]);

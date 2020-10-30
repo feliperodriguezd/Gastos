@@ -17,10 +17,18 @@ label {font-size: 20px;}
 	font-size: 20px;
 }
 
-table{
+#tabla{
 	width: 700px; 
 	height:100px;
 	background-color:#3C3C3C;
+}
+#tabla1{
+	float: right;
+	clear: both;
+	margin-right: 70px;
+	width: 390px;
+	background-color:#3C3C3C;
+	margin-top: 10px;
 }
 
 th{

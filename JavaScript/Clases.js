@@ -1,8 +1,9 @@
 class todo{
-	constructor(descripcion, monto, categoria){
+	constructor(descripcion, monto, categoria, moneda){
 		this.descripcion=descripcion
 		this.monto=monto
 		this.categoria=categoria
+		this.moneda=moneda
 	}
 	toString(){
         return this.categoria
