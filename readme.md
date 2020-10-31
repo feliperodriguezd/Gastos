@@ -9,3 +9,5 @@ Se agregó otro campo con una lista desplegable que calcula la cantidad de veces
 Se agregó una lista desplegable al lado de categoría en la cual se agregan las categorías usadas para simplificar el proceso de agregar una categoría. 
 #### Versión 0.0.5:
 Se cambió la función de del botón que contaba categorías y ahora despliega los elementos de esa categoría.
+#### Version 0.0.6:
+Se cambió el lugar en el cual te retorna el total. Ahora lo está debajo de la caja en la cual se ingresan los datos.
