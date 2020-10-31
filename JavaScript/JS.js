@@ -114,7 +114,8 @@ function limpirar(){
 }
 
 function total (){
-	let tablaPantalla = document.getElementById("tabla");
+	let tablaPantalla = document.getElementById("tabla2");
+	tablaPantalla.innerHTML="";
 	let fila=tablaPantalla.insertRow();
 	let total=fila.insertCell(0);
 	let suma=fila.insertCell(1);

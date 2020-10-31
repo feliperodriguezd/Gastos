@@ -22,7 +22,7 @@ label {font-size: 20px;}
 	height:100px;
 	background-color:#3C3C3C;
 }
-#tabla1{
+#tabla1, #tabla2{
 	float: right;
 	clear: both;
 	margin-right: 70px;
@@ -45,7 +45,7 @@ td {
 	margin-top: 10px;
 }
 
-#div2, #div3{
+#div2, #div4{
 	float: right;
 	margin-right: 70px;
 	margin-top: 10px;
@@ -55,4 +55,4 @@ td {
 	width: 351px;
 }
 
-#div3{clear: both;}
+#div4{clear: both;}
