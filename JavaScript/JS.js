@@ -37,6 +37,7 @@ function agregar(){
 		agregarCantidad(document.getElementById("tipoCategoria"));
 		agregarCantidad(document.getElementById("categoria2"));
 		limpirar();
+		total();
 	}
 }
 
