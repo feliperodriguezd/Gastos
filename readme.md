@@ -10,4 +10,4 @@ Se agregó una lista desplegable al lado de categoría en la cual se agregan las
 #### Versión 0.0.5:
 Se cambió la función de del botón que contaba categorías y ahora despliega los elementos de esa categoría.
 #### Version 0.0.6:
-Se cambió el lugar en el cual te retorna el total. Ahora lo está debajo de la caja en la cual se ingresan los datos.
+Se cambió el lugar en el cual te retorna el total. Ahora está debajo de la caja en la cual se ingresan los datos. Además se actualiza automáticamente después de apretar agregar.
