@@ -7,7 +7,9 @@ function inicio(){
 	document.getElementById("boton").addEventListener("click", agregar);
 	document.getElementById("USD2").addEventListener("click", total);
 	document.getElementById("$2").addEventListener("click", total);
-	document.getElementById("tipoCat").addEventListener("click", desplegarCategoria);
+	document.getElementById("tipoCategoria").addEventListener("change", desplegarCategoria);
+	document.getElementById("ingreso2").addEventListener("click", desplegarCategoria);
+	document.getElementById("egreso2").addEventListener("click", desplegarCategoria);
 }
 
 function agregar(){
@@ -34,12 +36,33 @@ function agregar(){
 			categoria.innerHTML=document.getElementById("categoria2").value;
 			catLista=document.getElementById("categoria2").value;
 		}
-		info.agregar(new todo(document.getElementById("descripcion").value, document.getElementById("monto").value, catLista, tipoMoneda()));
+		info.agregar(new todo(document.getElementById("descripcion").value, document.getElementById("monto").value, catLista, tipoMoneda(), tipoIngresoEgreso()));
 		agregarCantidad(document.getElementById("tipoCategoria"));
 		agregarCantidad(document.getElementById("categoria2"));
 		limpirar();
 		total();
+		desplegarCategoria();
 	}
+}
+
+function tipoIngresoEgreso(){
+	let respuesta;
+	if (document.getElementById("ingreso").checked){
+		respuesta="Ingreso";
+	} else {
+		respuesta="Egreso";
+	}
+	return respuesta;
+}
+
+function tipoIngresoEgreso2(){
+	let respuesta;
+	if (document.getElementById("ingreso2").checked){
+		respuesta="Ingreso";
+	} else {
+		respuesta="Egreso";
+	}
+	return respuesta;
 }
 
 function tipoMoneda (){
@@ -62,13 +85,13 @@ function comprobar(){
 		respuesta=false;
 		alert("Las dos campos en categoria estan completos");
 	}
-	return respuesta
+	return respuesta;
 }
 
 function desplegarCategoria(){
 	let tabla=document.getElementById("tabla1");
 	tabla.innerHTML="";
-	let datos=info.agregarCategoria();
+	let datos=info.listaPorTipo(tipoIngresoEgreso2());
 	if(datos.length==0){
 		tabla.innerHTML="Sin datos"
 	} else {
