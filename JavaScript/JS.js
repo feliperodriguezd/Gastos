@@ -5,7 +5,8 @@ var info = new datos();
 
 function inicio(){
 	document.getElementById("boton").addEventListener("click", agregar);
-	document.getElementById("total").addEventListener("click", total);
+	document.getElementById("USD2").addEventListener("click", total);
+	document.getElementById("$2").addEventListener("click", total);
 	document.getElementById("tipoCat").addEventListener("click", desplegarCategoria);
 }
 
