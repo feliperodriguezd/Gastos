@@ -1,81 +1,117 @@
+<!-- Felipe Rodriguez y Valentina Techera -->
+
 <!doctype html>
 <html lang="es">
 	<head>
-		<meta charset="utf-8">
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title> Gastos </title>
-		<link rel="stylesheet" href="CSS.css">
+		<title> Gestión de series </title>
+		<link rel="stylesheet" href="CSS/Estilos.css">
 		<script src="JavaScript/Clases.js"> </script>
 		<script src="JavaScript/JS.js"> </script>
 	</head>
 	<body>
-		<div id="div1">
-			<table id="tabla">
-				<thead>
-					<tr>
-						<th> Tipo </th>
-						<th> Descripcion </th>
-						<th> Monto </th>
-						<th> Categoria </th>
-					</tr>
-				</thead>
-				<tbody>
-				
-				</tbody>
-			</table>
-		</div>
-		<div id="div2">
-			<form id="formulario">
-				<label for="ingreso"> Ingreso </label>
-				<input type="radio" id="ingreso" name="egreso/ingreso" checked>
-				<label for="egreso"> Egreso </label>
-				<input type="radio" id="egreso" name="egreso/ingreso">
+		<header>
+			<h1> Gestión de series </h1> 
+		</header>
+		<nav>
+			<ul id="lista">
+				<li class="Series" id="idSeries"> <a href="#ManejoDeSeries"> Series </a> </li>
+				<li class="Opiniones" id="idOpiniones"> <a href="#DatosOpiniones"> Opiniones </a> </li>
+				<li class="Estadisticas" id="idEstadisticas"> <a href="#InfoEstadisticas"> Estadísticas </a> </li>
+			</ul>
+		</nav>
+		<section class="Series1">
+			<a id="ManejoDeSeries"> </a>
+			<h2> Manejo de series </h2>
+			<form id="idFormSeries">
+				<label for="idNombre"> Nombre </label>
+				<br>
+				<input type="text" id="idNombre" name="nombre" maxlength="30" placeholder="Nombre" required>
+				<br>
+				<label for="idDescripcion"> Descripción </label>
+				<br>
+				<input type="text" id="idDescripcion" name="descripcion" maxlength="30" placeholder="Descripción" required>
+				<br>
+				<label for="idTemporadas"> Cantidad de temporadas </label>
+				<br>
+				<input type="number" id="idTemporadas" name="temporadas" min="1" max="20" required>
+				<br>
+				<label for="idCapitulos"> Cantidad de capítulos </label>
+				<br>
+				<input type="number" id="idCapitulos" name="capitulos" min="1" max="30" required>
+			</form>
+				<br> <br>
+				<button type="button" id="idAgregarSeries"> Agregar/Actualizar </button>
+				<button type="button" id="idResetSeries"> Reset </button>
+				<button type="button" id="idPrevio"> Previo </button>
+				<button type="button" id="idSiguiente"> Siguiente </button>
 				<br>
 				<br>
-				<label for="descripcion"> Descripcion </label>
-				<input type="text" id="descripcion" name="descripcion" class="Cuadro" placeholder="Descripcion">
+				<a id="idImdb" href="https://www.imdb.com/" target=blank> <img src="imagenes/imdb.png" width="60" height="30" alt="Imagen imdb"> </a>
+		</section>
+		<section class="Opiniones1">
+			<a id="DatosOpiniones"> </a>
+			<h2> Datos sobre opiniones de visualización </h2>
+			<form id="FormOpiniones">
+				<label for="idSerie"> Serie </label>
 				<br>
-				<br>
-				<label for="monto"> Monto </label>
-				<input type="number" id="monto" name="monto" class="Cuadro" placeholder="Monto">
-				<label for="$"> $ </label>
-				<input type="radio" id="$" name="moneda" checked>
-				<label for="USD"> U$S </label>
-				<input type="radio" id="USD" name="moneda">
-				<br>
-				<br>
-				<label for="categoria"> Categoria </label>
-				<input type="text" id="categoria1" name="categoria" class="Cuadro" placeholder="Categoria">
-				<select id="categoria2" class="Cuadro"> 
-					<option> </option>
+				<select name="Serie" id="idSerie">
+					
 				</select>
 				<br>
+				<label for="idNumTemporada"> Temporada </label>
 				<br>
-				<input type="button" id="boton" name="boton" value="Agregar" class="Botones">
+				<input type="number" id="idNumTemporada" name="NumTemporada" min="1" max="20" required>
 				<br>
+				<label for="idNumCapitulo"> Capítulo </label>
 				<br>
-				<label for="total"> Moneda: </label>
-				<label for="$2"> $ </label>
-				<input type="radio" id="$2" name="moneda2" checked>
-				<label for="USD2"> U$S </label>
-				<input type="radio" id="USD2" name="moneda2">
+				<input type="number" id="idNumCapitulo" name="NumCapitulo" min="1" max="30" required>
+				<br>
+				<label for="idPuntaje"> Puntaje (1-10) </label>
+				<br>
+				<input type="range" id="idPuntaje" name="Puntaje">
+				<br>
+				<label for="idComentario"> Comentario </label>
+				<br>
+				<textarea id="idComentario" name="Comentario" cols="50" rows="5" required></textarea>
 			</form>
-		</div>
-		<div id="div3">
-			<table id="tabla2">
-			</table>
-		</div>
-		<div id="div4">
-			<label for="tipoCategoria"> Cantidad de </label>
-			<select id="tipoCategoria" class="Cuadro"> </select>
 			<br>
 			<br>
-			<input type="button" id="tipoCat" name="tipoCat" value="Categoria" class="Botones">
-			<p id="respuesta"> </p>
-		</div>
-		<div id="div5">
-			<table id="tabla1">
-			</table>
-		</div>
+			<button id="idAgregarOpiniones" type="button"> Agregar/Actualizar </button>
+			<button type="button" id="idResetOpiniones"> Reset </button>
+			<h2> Opiniones ingresadas de la serie </h2>
+			<ul id="idLista"> 
+				
+			</ul>
+		</section>
+		<section class="Estadisticas1">
+				<a id="InfoEstadisticas"> </a>
+				<h2> Información estadística </h2>
+				<p> Series sin opiniones </p>
+				<ul id="idSinOpinion">
+					
+				</ul>
+				<p> Top-3 Series con la máxima cantidad de opiniones </p>
+				<ul id="idTop3">
+					
+				</ul>
+				<p> Información general </p>
+				<label for="idOrden"> Orden: </label>
+				<br>
+				<input type="radio" id="idOrden" name="Orden" value="Nombre de serie" checked>
+				<label for="idOrden"> Nombre de serie </label>
+				<input type="radio" id="idOrden1" name="Orden" value="Cantidad de opiniones decreciente">
+				<label for="idOrden1"> Cantidad de opiniones decreciente </label>
+				<br>
+				<br>
+				<table id="idTabla">
+					
+				</table>
+				<br>
+		</section>
+		<footer>
+			<p> Felipe Rodríguez 258250 Valentina Techera 265947 </p>
+		</footer>
 	</body>
 </html>
