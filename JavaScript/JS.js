@@ -5,11 +5,16 @@ var info = new datos();
 
 function inicio(){
 	document.getElementById("boton").addEventListener("click", agregar);
-	document.getElementById("USD2").addEventListener("click", total);
-	document.getElementById("$2").addEventListener("click", total);
+	document.getElementById("USD2").addEventListener("click", radioBotonMoneda);
+	document.getElementById("$2").addEventListener("click", radioBotonMoneda);
 	document.getElementById("tipoCategoria").addEventListener("change", desplegarCategoria);
 	document.getElementById("ingreso2").addEventListener("click", desplegarCategoria);
 	document.getElementById("egreso2").addEventListener("click", desplegarCategoria);
+}
+
+function radioBotonMoneda(){
+	total();
+	desplegarCategoria();
 }
 
 function agregar(){
@@ -128,7 +133,16 @@ function desplegarCategoria(){
 			let celTotalNombre = celTotal.insertCell();
 			celTotalNombre.innerHTML = "Total";
 			let celTotalNumero = celTotal.insertCell();
-			celTotalNumero.innerHTML = "$ " + totalParcial;
+			if (document.getElementById("USD2").checked){
+				totalParcial=totalParcial/43;
+				if (totalParcial-parseInt(totalParcial)==0){
+					celTotalNumero.innerHTML = "USD " + totalParcial;
+				} else {
+					celTotalNumero.innerHTML = "USD " + parseInt(totalParcial) + " (aprox.)";
+				}
+			} else {
+				celTotalNumero.innerHTML = "$ " + totalParcial;
+			}
 	}
 }
 
