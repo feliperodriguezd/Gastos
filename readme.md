@@ -14,4 +14,4 @@ Se cambió el lugar en el cual te retorna el total. Ahora está debajo de la caj
 #### Version 0.0.7:
 Se saco los botones de moneda, de cantidad y ahora funciona automáticamente al cambiar la moneda en el radio botón y al seleccionar en la lista desplegable.
 #### Version 0.0.8:
-Se agregó a la parte de cantidad un separador de ingresos y egresos. También se agregó un total parcial dentro de la cantidad por categoría el cual tambien responde a los cambios en el radio boton de la moneda.
+Se agregó a la parte de cantidad un separador de ingresos y egresos. También se agregó un total parcial dentro de la cantidad por categoría el cual responde a los cambios en el radio botón de la moneda.
