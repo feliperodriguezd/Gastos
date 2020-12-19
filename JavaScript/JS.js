@@ -92,6 +92,7 @@ function desplegarCategoria(){
 	let tabla=document.getElementById("tabla1");
 	tabla.innerHTML="";
 	let datos=info.listaPorTipo(tipoIngresoEgreso2());
+	let totalParcial=0;
 	if(datos.length==0){
 		tabla.innerHTML="Sin datos"
 	} else {
@@ -116,8 +117,18 @@ function desplegarCategoria(){
 					}
 					descripcion.innerHTML =elem.descripcion;
 					monto.innerHTML =elem.moneda + " "+ elem.monto;
+					if (elem.moneda=="$"){
+						totalParcial=totalParcial + parseInt(elem.monto);
+					} else {
+						totalParcial=totalParcial + (parseInt(elem.monto*43));
+					}
 				}
 			}
+			let celTotal = tabla.insertRow();
+			let celTotalNombre = celTotal.insertCell();
+			celTotalNombre.innerHTML = "Total";
+			let celTotalNumero = celTotal.insertCell();
+			celTotalNumero.innerHTML = "$ " + totalParcial;
 	}
 }
 
@@ -145,7 +156,7 @@ function total (){
 	let total=fila.insertCell(0);
 	let suma=fila.insertCell(1);
 	total.innerHTML="Total";
-	suma.innerHTML="$ "+sumatotal;
+	suma.innerHTML="$ "+ sumatotal;
 	if (document.getElementById("$2").checked){
 		suma.innerHTML="$ "+sumatotal;
 	} else {
