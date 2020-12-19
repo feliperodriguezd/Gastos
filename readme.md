@@ -12,4 +12,6 @@ Se cambió la función de del botón que contaba categorías y ahora despliega l
 #### Version 0.0.6:
 Se cambió el lugar en el cual te retorna el total. Ahora está debajo de la caja en la cual se ingresan los datos. Además se actualiza automáticamente después de apretar agregar.
 #### Version 0.0.7:
-Se saco los botones de moneda, de cantidad y ahora funciona automáticamente al cambiar la moneda en el radio botón y al seleccionar en la lista desplegable. Se agregó a la parte de cantidad un separador de ingresos y egresos.
+Se saco los botones de moneda, de cantidad y ahora funciona automáticamente al cambiar la moneda en el radio botón y al seleccionar en la lista desplegable.
+#### Version 0.0.8:
+Se agregó a la parte de cantidad un separador de ingresos y egresos. También se agregó un total parcial dentro de la cantidad por categoría.
